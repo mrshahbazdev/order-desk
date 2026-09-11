@@ -1,0 +1,12 @@
+node_modules
+dist
+release
+.DS_Store
+inventory.db
+*.db
+*.enc
+*.pem
+license-private.pem
+*.zip
+.env
+

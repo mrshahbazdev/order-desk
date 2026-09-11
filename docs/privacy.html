@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Order Desk</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 48px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+    .logo {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .date {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 28px 0 12px;
+      color: var(--text);
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+    }
+    p, ul {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+    ul {
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .highlight-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      color: #1e40af;
+      font-size: 14.5px;
+    }
+    .footer {
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      padding-top: 24px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">ORDER DESK</div>
+      <h1>Privacy Policy</h1>
+      <div class="date">Effective Date: September 11, 2026 · Version 1.0.7</div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>Core Principle:</strong> Order Desk is an offline-first, local software application. Your store data, orders, customer records, and credentials are stored strictly on your local machine and are never uploaded to any third-party server or analytics service.
+    </div>
+
+    <h2>1. 100% Local-First Data Storage</h2>
+    <p>All data processed by Order Desk resides locally on your computer in an encrypted SQLite database stored in your operating system user profile directory. This includes:</p>
+    <ul>
+      <li>Order line items, customer shipping addresses, and transaction amounts</li>
+      <li>Product catalogs, inventory SKU quantities, and barcode mappings</li>
+      <li>Warehouse bin locations, wave picking records, and pack station audit logs</li>
+      <li>Generated PDF waybills, thermal label archives, and customized invoices</li>
+    </ul>
+
+    <h2>2. Hardware & OS-Level Credential Encryption</h2>
+    <p>All private access tokens, API keys, and sensitive merchant secrets are encrypted using the Windows Data Protection API (DPAPI) via Electron SafeStorage before being written to disk. Plaintext credentials are never saved in database tables or unencrypted JSON files.</p>
+
+    <h2>3. Direct API Connections Only</h2>
+    <p>Order Desk only connects outward to external services that you explicitly configure and authorize:</p>
+    <ul>
+      <li><strong>Your Shopify Store:</strong> Direct bi-directional API connection to sync orders, inventory, and fulfillment states.</li>
+      <li><strong>Your WooCommerce Store:</strong> Direct REST API connection to your authorized store domain.</li>
+      <li><strong>Your Courier APIs:</strong> Direct REST API communication with configured shipping carriers (e.g., PostEx, Trax, DHL, FedEx, TCS, Leopards, Aramex) for waybill generation and tracking.</li>
+    </ul>
+
+    <h2>4. WhatsApp & Customer Communication</h2>
+    <p>Order Desk does not integrate proprietary background bot networks or transmit customer phone numbers to third-party marketing services. When you click to message a customer, the application opens standard <code>https://wa.me/</code> links in your default system web browser. The user retains complete manual control over sending messages.</p>
+
+    <h2>5. Zero Telemetry & Zero Analytics</h2>
+    <p>Order Desk contains:</p>
+    <ul>
+      <li>No tracking cookies or marketing pixels</li>
+      <li>No remote usage telemetry or behavior logging</li>
+      <li>No background crash reporting to developer servers</li>
+      <li>No cloud synchronization of customer data</li>
+    </ul>
+
+    <h2>6. Data Retention & Deletion</h2>
+    <p>You have full ownership and sovereign control over your data at all times. You may completely remove all local data, database records, document archives, and encrypted vault secrets at any time directly through the app by navigating to: <strong>Settings &rarr; Delete All Data</strong>.</p>
+
+    <h2>7. Developer Contact</h2>
+    <p>If you have questions regarding this Privacy Policy or data security practices, please contact:</p>
+    <ul>
+      <li><strong>Lead Developer:</strong> Muhammad Shahbaz</li>
+      <li><strong>Email:</strong> <a href="mailto:mrshahbaznns@gmail.com">mrshahbaznns@gmail.com</a> / <a href="mailto:mrshahbaz46@gamil.com">mrshahbaz46@gamil.com</a></li>
+      <li><strong>WhatsApp / Direct Phone:</strong> +92 306 1081842</li>
+    </ul>
+
+    <div class="footer">
+      &copy; 2026 Order Desk. Local-First Multi-Store Operations. Developed by Muhammad Shahbaz.
+    </div>
+  </div>
+</body>
+</html>

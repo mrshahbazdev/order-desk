@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Order Desk licensing utility.
+ * Skulane licensing utility.
  *
  *   node scripts/license-keygen.mjs keygen
  *       Generates an Ed25519 keypair. Paste the PUBLIC key into

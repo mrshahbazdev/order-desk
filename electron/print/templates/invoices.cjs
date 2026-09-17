@@ -10,10 +10,10 @@ function renderInvoiceHTML({ order, invoiceNumber, storeSettings = {}, pageSize 
   const billing = order.billing_address || {};
   const items = order.items || [];
 
-  const storeName = storeSettings.storeName || order.store_label || 'Order Desk Store';
+  const storeName = storeSettings.storeName || order.store_label || 'Skulane Store';
   const storeAddress = storeSettings.storeAddress || 'Main Commercial Area, Lahore, Pakistan';
   const storePhone = storeSettings.storePhone || '+92 300 1234567';
-  const storeEmail = storeSettings.storeEmail || 'support@orderdesk.local';
+  const storeEmail = storeSettings.storeEmail || 'mrshahbaznns@gmail.com';
 
   return `
 <!DOCTYPE html>

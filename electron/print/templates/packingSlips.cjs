@@ -121,8 +121,8 @@ function renderPackingSlipHTML({ orders, isThermal = true, isPartial = false, pa
         <div class="slip-header">
           <div>
             <div class="slip-title">PACKING SLIP</div>
-            <div style="font-size: 10px; color: #555;">${order.store_label || 'Order Desk'}</div>
-            ${isPartialOrder ? '<div class="partial-badge">⚠️ PARTIAL SHIPMENT</div>' : ''}
+            <div style="font-size: 10px; color: #555;">${order.store_label || 'Skulane'}</div>
+            ${isPartialOrder ? '<div class="partial-badge">PARTIAL SHIPMENT</div>' : ''}
           </div>
           <div>
             <div class="order-num">${order.name}</div>

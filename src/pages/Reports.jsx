@@ -28,7 +28,8 @@ import {
   ShoppingCart as OrdersIcon,
   AttachMoney as RevenueIcon,
   LocalShipping as ShippingIcon,
-  Storefront as StoreIcon
+  Storefront as StoreIcon,
+  Inventory2 as InventoryIcon
 } from '@mui/icons-material';
 import {
   ResponsiveContainer,
@@ -473,7 +474,7 @@ function resolveOrGenerateSku(title, variant, existingSku) {
                 topProducts.map((prod, idx) => (
                   <TableRow key={`${prod.title}_${prod.sku}_${idx}`} hover>
                     <TableCell sx={{ color: 'text.secondary', fontWeight: 700 }}>
-                      {idx === 0 ? '🥇 1' : idx === 1 ? '🥈 2' : idx === 2 ? '🥉 3' : `#${idx + 1}`}
+                      {`#${idx + 1}`}
                     </TableCell>
                     <TableCell>
                       <Stack direction="row" spacing={1.5} alignItems="center">
@@ -482,7 +483,7 @@ function resolveOrGenerateSku(title, variant, existingSku) {
                           variant="rounded"
                           sx={{ width: 36, height: 36, bgcolor: '#f1f5f9', border: '1px solid #e2e8f0' }}
                         >
-                          📦
+                          <InventoryIcon sx={{ fontSize: 18, color: '#94a3b8' }} />
                         </Avatar>
                         <Box>
                           <Typography variant="body2" sx={{ fontWeight: 700, color: '#0f172a' }}>

@@ -1,5 +1,5 @@
 /**
- * Complete Extended Demo Data Seeder for Order Desk
+ * Complete Extended Demo Data Seeder for Skulane
  * Populates realistic multi-store data across all 13+ modules.
  */
 
@@ -289,7 +289,7 @@ function loadDemoData(dbManager) {
         JSON.stringify(shipAddr),
         JSON.stringify(o.items),
         o.tags,
-        'Demo order for testing Order Desk fulfillment workflows',
+        'Demo order for testing Skulane fulfillment workflows',
         o.risk
       );
     }

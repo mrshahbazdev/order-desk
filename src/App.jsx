@@ -210,11 +210,11 @@ export default function App() {
                 fontSize: 18
               }}
             >
-              OD
+              SK
             </Box>
             <div>
               <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#fff', lineHeight: 1.2 }}>
-                Order Desk
+                Skulane
               </Typography>
               <Typography variant="caption" sx={{ color: '#94a3b8', fontSize: '0.7rem' }}>
                 Local-First Multi-Store

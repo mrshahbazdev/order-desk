@@ -1,6 +1,6 @@
-# Walkthrough — Order Desk Advanced Build
+# Walkthrough — Skulane Advanced Build
 
-We have built **Order Desk**, a local-first desktop application for Windows using Electron, SQLite3, React, and MUI, according to the architectural roadmap.
+We have built **Skulane**, a local-first desktop application for Windows using Electron, SQLite3, React, and MUI, according to the architectural roadmap.
 
 ---
 

@@ -34,7 +34,7 @@ if (!gotTheLock) {
       if (mainWindow.isMinimized()) mainWindow.restore();
       mainWindow.focus();
     }
-    const link = commandLine.find((arg) => arg.startsWith('orderdesk://'));
+    const link = commandLine.find((arg) => arg.startsWith('skulane://') || arg.startsWith('orderdesk://'));
     if (link) handleDeepLink(link);
   });
 
@@ -50,7 +50,7 @@ if (!gotTheLock) {
    * previous version only listened for second-instance, so the very first
    * OAuth connect — the one every new customer does — was dropped on the floor.
    */
-  const argvLink = process.argv.find((arg) => arg.startsWith('orderdesk://'));
+  const argvLink = process.argv.find((arg) => arg.startsWith('skulane://') || arg.startsWith('orderdesk://'));
   if (argvLink) pendingDeepLink = argvLink;
 
   app.whenReady().then(initApp);
@@ -58,11 +58,11 @@ if (!gotTheLock) {
 
 function registerProtocolClient() {
   if (process.defaultApp && process.argv.length >= 2) {
-    app.setAsDefaultProtocolClient('orderdesk', process.execPath, [
+    app.setAsDefaultProtocolClient('skulane', process.execPath, [
       path.resolve(process.argv[1])
     ]);
   } else {
-    app.setAsDefaultProtocolClient('orderdesk');
+    app.setAsDefaultProtocolClient('skulane');
   }
 }
 
@@ -141,9 +141,9 @@ async function initApp() {
     dbManager.init();
   } catch (err) {
     dialog.showErrorBox(
-      'Order Desk could not start',
+      'Skulane could not start',
       'The local database could not be opened.\n\n' + err.message +
-      '\n\nIf this keeps happening, another copy of Order Desk may still be running.'
+      '\n\nIf this keeps happening, another copy of Skulane may still be running.'
     );
     app.quit();
     return;
@@ -184,7 +184,7 @@ function createWindow() {
     minWidth: 1024,
     minHeight: 700,
     show: true,
-    title: 'Order Desk',
+    title: 'Skulane',
     backgroundColor: '#f8fafc',
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
@@ -236,7 +236,7 @@ function createWindow() {
   mainWindow.webContents.on('render-process-gone', (_e, details) => {
     console.error('[App] Renderer gone:', details.reason);
     if (details.reason !== 'clean-exit') {
-      dialog.showErrorBox('Order Desk stopped responding', 'The window will reload.');
+      dialog.showErrorBox('Skulane stopped responding', 'The window will reload.');
       mainWindow.reload();
     }
   });
@@ -287,7 +287,7 @@ function registerAppIPC() {
       defaultId: 1,
       cancelId: 1,
       title: 'Delete all local data',
-      message: 'Delete all Order Desk data on this computer?',
+      message: 'Delete all Skulane data on this computer?',
       detail:
         'This removes the local database, saved credentials and generated documents. ' +
         'Your stores are not affected — nothing is deleted from Shopify or WooCommerce.'

@@ -96,7 +96,7 @@ const DEFAULT_TEMPLATES = [
 
   <div class="footer">
     <div>{{footer_note}}</div>
-    <div style="margin-top: 4px;">Generated locally via Order Desk · Thank you for your business!</div>
+    <div style="margin-top: 4px;">Generated locally via Skulane · Thank you for your business!</div>
   </div>
 </body>
 </html>`
@@ -200,8 +200,8 @@ const DEFAULT_TEMPLATES = [
       <div class="ship-to-title">DELIVER TO:</div>
       <div class="customer-name">{{customer.name}}</div>
       <div class="customer-address">{{shipping.address1}}</div>
-      <div class="city-badge">📍 {{shipping.city}} ({{shipping.province}})</div>
-      <div style="font-size: 13px; font-weight: 800; margin-top: 2px;">📞 {{customer.phone}}</div>
+      <div class="city-badge">{{shipping.city}} ({{shipping.province}})</div>
+      <div style="font-size: 13px; font-weight: 800; margin-top: 2px;">Phone: {{customer.phone}}</div>
     </div>
 
     <div class="order-summary-box">
@@ -449,10 +449,10 @@ class CustomTemplateManager {
  '{{shipping.province}}': shipping.province || 'Province',
  '{{shipping.zip}}': shipping.zip || 'Zip',
  '{{shipping.country}}': shipping.country || 'Country',
- '{{store.name}}': storeSettings.storeName || order.store_label || 'Order Desk Store',
+ '{{store.name}}': storeSettings.storeName || order.store_label || 'Skulane Store',
  '{{store.address}}': storeSettings.storeAddress || 'Commercial Area, Lahore, Pakistan',
  '{{store.phone}}': storeSettings.storePhone || '+92 300 1234567',
- '{{store.email}}': storeSettings.storeEmail || 'support@orderdesk.local',
+ '{{store.email}}': storeSettings.storeEmail || 'mrshahbaznns@gmail.com',
  '{{invoice.number}}': options.invoiceNumber || ('INV-' + (order.name ? order.name.replace(/[^0-9]/g, '') : '1001')),
  '{{invoice.date}}': new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
  '{{tracking.number}}': options.trackingNumber || ('TRK-' + (order.name ? order.name.replace(/[^0-9]/g, '') : '998811')),

@@ -40,7 +40,7 @@ export default function Support() {
     developerName: 'Muhammad Shahbaz',
     developerTitle: 'Lead Software Engineer & Solutions Architect',
     primaryEmail: 'mrshahbaznns@gmail.com',
-    secondaryEmail: 'mrshahbaz46@gamil.com',
+    secondaryEmail: 'mrshahbaz46@gmail.com',
     whatsappNumber: '+923061081842',
     whatsappDisplay: '+92 306 1081842',
     availability: '24/7 Global Technical Support & Custom Development'
@@ -54,7 +54,7 @@ export default function Support() {
   };
 
   const handleOpenWhatsApp = async (customText = null) => {
-    const textToSend = customText || `Hello Muhammad Shahbaz, I am using Order Desk and would like to request support/custom updates.\n\nSubject: ${inquirySubject}\nDetails: ${inquiryMessage || 'I would like to discuss custom features.'}`;
+    const textToSend = customText || `Hello Muhammad Shahbaz, I am using Skulane and would like to request support/custom updates.\n\nSubject: ${inquirySubject}\nDetails: ${inquiryMessage || 'I would like to discuss custom features.'}`;
     try {
       if (window.api?.messaging?.openWhatsApp) {
         await window.api.messaging.openWhatsApp({
@@ -72,9 +72,9 @@ export default function Support() {
 
   const handleOpenEmail = (recipientEmail) => {
     const emailTo = recipientEmail || contactInfo.primaryEmail;
-    const subject = encodeURIComponent(`Order Desk Inquiry: ${inquirySubject}`);
+    const subject = encodeURIComponent(`Skulane Inquiry: ${inquirySubject}`);
     const body = encodeURIComponent(
-      `Hello Muhammad Shahbaz,\n\nI am contacting you regarding Order Desk enterprise management software.\n\nInquiry Details:\n${inquiryMessage || 'Please contact me regarding custom features and technical support.'}\n\nBest regards.`
+      `Hello Muhammad Shahbaz,\n\nI am contacting you regarding Skulane enterprise management software.\n\nInquiry Details:\n${inquiryMessage || 'Please contact me regarding custom features and technical support.'}\n\nBest regards.`
     );
     window.open(`mailto:${emailTo}?subject=${subject}&body=${body}`, '_blank');
   };
@@ -247,7 +247,7 @@ export default function Support() {
                 fullWidth
                 variant="contained"
                 startIcon={<WhatsAppIcon />}
-                onClick={() => handleOpenWhatsApp('Hello, I need custom updates and development support for Order Desk.')}
+                onClick={() => handleOpenWhatsApp('Hello, I need custom updates and development support for Skulane.')}
                 sx={{
                   bgcolor: '#16a34a',
                   fontWeight: 800,

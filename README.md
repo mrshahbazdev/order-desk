@@ -1,4 +1,4 @@
-# Order Desk
+# Skulane
 
 Local-first desktop application for high-volume multi-channel e-commerce operations, built for Shopify and WooCommerce merchants.
 
@@ -66,13 +66,14 @@ npm run dist:win
 
 ## Privacy & Security
 
-Order Desk is local-first. All store data, orders, customer records, and credentials remain on the local machine within the operating system sandbox. No telemetry or analytics are collected.
+Skulane is local-first. All store data, orders, customer records, and credentials remain on the local machine within the operating system sandbox. No telemetry or analytics are collected.
 
 ---
 
 ## Contact & Support
 
 - **Developer**: Muhammad Shahbaz
-- **Email**: mrshahbaznns@gmail.com / mrshahbaz46@gamil.com
+- **Email**: mrshahbaznns@gmail.com / mrshahbaz46@gmail.com
 - **WhatsApp**: +92 306 1081842
+
 

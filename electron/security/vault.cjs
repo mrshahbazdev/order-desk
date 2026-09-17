@@ -21,7 +21,13 @@ class Vault {
   getVaultPath() {
     if (!this.vaultPath) {
       const userData = app ? app.getPath('userData') : process.cwd();
-      this.vaultPath = path.join(userData, 'orderdesk_vault.enc');
+      const primary = path.join(userData, 'skulane_vault.enc');
+      const legacy = path.join(userData, 'orderdesk_vault.enc');
+      if (!fs.existsSync(primary) && fs.existsSync(legacy)) {
+        this.vaultPath = legacy;
+      } else {
+        this.vaultPath = primary;
+      }
     }
     return this.vaultPath;
   }
@@ -35,7 +41,7 @@ class Vault {
     throw new Error(
       'Secure storage is unavailable on this system, so store credentials ' +
       'cannot be saved. On Windows this usually means the DPAPI service is ' +
-      'blocked by policy. Order Desk will not fall back to storing tokens ' +
+      'blocked by policy. Skulane will not fall back to storing tokens ' +
       'unencrypted.'
     );
   }

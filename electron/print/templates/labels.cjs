@@ -4,7 +4,7 @@ function renderShippingLabelHTML({ order, trackingNumber = '', trackingCompany =
   const shipping = order.shipping_address || {};
   const customer = order.customer || {};
 
-  const senderName = senderInfo.name || 'Order Desk Merchant';
+  const senderName = senderInfo.name || 'Skulane Merchant';
   const senderAddress = senderInfo.address || 'Lahore Distribution Center';
   const senderPhone = senderInfo.phone || '+92 300 0000000';
 

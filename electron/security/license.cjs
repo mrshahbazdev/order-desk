@@ -78,7 +78,7 @@ class LicenseManager {
 
     const parts = licenseKey.trim().replace(/\s+/g, '').split('.');
     if (parts.length !== 2) {
-      return { valid: false, error: 'That does not look like an Order Desk license key' };
+      return { valid: false, error: 'That does not look like a Skulane license key' };
     }
 
     let payloadJson;

@@ -639,7 +639,7 @@ export default function PrintCenter() {
             <Card sx={{ borderRadius: 2, border: '1px solid #e2e8f0' }} elevation={0}>
               <CardContent sx={{ p: 2.5 }}>
                 <Typography variant="subtitle1" sx={{ fontWeight: 800, mb: 2, color: '#0f172a' }}>
-                  ⚙️ Print Controls & Layout
+                  Print Controls & Layout
                 </Typography>
 
                 {/* Studio Mode Selector */}
@@ -702,10 +702,10 @@ export default function PrintCenter() {
                             else setPageSize('A4');
                           }}
                         >
-                          <MenuItem value="invoice">📄 Tax Invoice</MenuItem>
-                          <MenuItem value="label">🏷️ Thermal Shipping Label (4x6)</MenuItem>
-                          <MenuItem value="packing_slip">📦 Packing Slip</MenuItem>
-                          <MenuItem value="barcode">🔲 Barcode Sticker</MenuItem>
+                          <MenuItem value="invoice">Tax Invoice</MenuItem>
+                          <MenuItem value="label">Thermal Shipping Label (4x6)</MenuItem>
+                          <MenuItem value="packing_slip">Packing Slip</MenuItem>
+                          <MenuItem value="barcode">Barcode Sticker</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
@@ -1078,7 +1078,7 @@ export default function PrintCenter() {
                 {/* Template Selector & Action Bar */}
                 <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
                   <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#0f172a' }}>
-                    🎨 Template & Page Geometry Designer
+                    Template & Page Geometry Designer
                   </Typography>
                   <Stack direction="row" spacing={1}>
                     <Button
@@ -1211,7 +1211,7 @@ export default function PrintCenter() {
                 {/* Clickable Variable Tags Palette */}
                 <Box sx={{ mb: 2 }}>
                   <Typography variant="caption" sx={{ fontWeight: 800, color: 'text.secondary', display: 'block', mb: 0.5 }}>
-                    📋 CLICK TO COPY DYNAMIC PLACEHOLDER TAG:
+                    CLICK TO COPY DYNAMIC PLACEHOLDER TAG:
                   </Typography>
                   <Paper variant="outlined" sx={{ p: 1, maxHeight: 90, overflowY: 'auto', display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                     {availableVariables.map((v) => (
@@ -1484,14 +1484,14 @@ export default function PrintCenter() {
                         {doc.order_name ? (
                           <span style={{ color: '#2563eb' }}>{doc.order_name}</span>
                         ) : doc.kind === 'barcode' ? (
-                          <span style={{ color: '#334155' }}>🏷️ {doc.number || 'Product Barcode'}</span>
+                          <span style={{ color: '#334155' }}>{doc.number || 'Product Barcode'}</span>
                         ) : (
                           <span style={{ color: '#64748b' }}>{doc.number || 'General Batch'}</span>
                         )}
                       </TableCell>
                       <TableCell>
                         <Chip
-                          label={doc.store_label || (doc.kind === 'barcode' ? 'Product Catalog' : 'Active Feet')}
+                          label={doc.store_label || (doc.kind === 'barcode' ? 'Product Catalog' : 'Skulane')}
                           size="small"
                           sx={{ height: 20, fontSize: '0.7rem', bgcolor: '#f1f5f9', fontWeight: 600 }}
                         />

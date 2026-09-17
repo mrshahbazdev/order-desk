@@ -156,8 +156,8 @@ export default function Guide() {
 
   const faqs = [
     {
-      q: 'Does Order Desk work completely offline without an active internet connection?',
-      a: 'Yes. Order Desk is built with a local-first SQLite database architecture. All orders, products, packing workflows, and reports run locally at maximum speed. When internet is restored, changes automatically sync with Shopify and WooCommerce in the background.'
+      q: 'Does Skulane work completely offline without an active internet connection?',
+      a: 'Yes. Skulane is built with a local-first SQLite database architecture. All orders, products, packing workflows, and reports run locally at maximum speed. When internet is restored, changes automatically sync with Shopify and WooCommerce in the background.'
     },
     {
       q: 'How do I connect my own custom courier API or shipping provider?',
@@ -165,11 +165,11 @@ export default function Guide() {
     },
     {
       q: 'How does the Automatic SKU and Barcode Generator work for new products?',
-      a: 'When new products sync from your online store that lack an SKU or barcode, Order Desk automatically generates standard EAN-13 barcodes and systematic SKUs based on product title, vendor, and options. These can be saved and synced directly back to your store.'
+      a: 'When new products sync from your online store that lack an SKU or barcode, Skulane automatically generates standard EAN-13 barcodes and systematic SKUs based on product title, vendor, and options. These can be saved and synced directly back to your store.'
     },
     {
       q: 'How do I prevent fake or duplicate COD orders from being dispatched?',
-      a: 'Order Desk includes an automated Duplicate Order Detector. When you view any order, the system scans your database for any orders placed by the same phone number within the last 48 hours. If duplicates are found, a warning banner appears with one-click options to verify or consolidate.'
+      a: 'Skulane includes an automated Duplicate Order Detector. When you view any order, the system scans your database for any orders placed by the same phone number within the last 48 hours. If duplicates are found, a warning banner appears with one-click options to verify or consolidate.'
     },
     {
       q: 'How does Scan-to-Restock work in Returns & Exchanges?',
@@ -181,7 +181,7 @@ export default function Guide() {
     },
     {
       q: 'Where are my database files and document PDFs stored on my computer?',
-      a: 'Your database and document archive are stored securely in your Windows user profile AppData folder: AppData/Roaming/Order Desk. You can view the exact path or clear data in the "Settings" page under "App & Storage Info".'
+      a: 'Your database and document archive are stored securely in your Windows user profile AppData folder: AppData/Roaming/Skulane. You can view the exact path or clear data in the "Settings" page under "App & Storage Info".'
     },
     {
       q: 'Who should I contact for custom updates, specialized features, or new carrier integrations?',
@@ -206,7 +206,7 @@ export default function Guide() {
               User Operations Guide & Knowledge Base
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Comprehensive manual, operational workflows, and frequently asked questions for Order Desk
+              Comprehensive manual, operational workflows, and frequently asked questions for Skulane
             </Typography>
           </div>
         </Stack>
@@ -365,7 +365,7 @@ export default function Guide() {
                 if (window.api?.messaging?.openWhatsApp) {
                   window.api.messaging.openWhatsApp({
                     phone: '+923061081842',
-                    text: 'Hello Muhammad Shahbaz, I have a question regarding Order Desk.'
+                    text: 'Hello Muhammad Shahbaz, I have a question regarding Skulane.'
                   });
                 } else {
                   window.open('https://wa.me/923061081842', '_blank');
@@ -392,7 +392,7 @@ export default function Guide() {
                   </Typography>
                 </Stack>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 2.5 }}>
-                  Order Desk is optimized for USB, Bluetooth, and 2.4GHz handheld laser and 2D image scanners.
+                  Skulane is optimized for USB, Bluetooth, and 2.4GHz handheld laser and 2D image scanners.
                 </Typography>
 
                 <TableContainer component={Paper} elevation={0} sx={{ border: '1px solid #f1f5f9' }}>

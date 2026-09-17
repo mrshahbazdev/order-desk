@@ -3,7 +3,7 @@
  * Prevents TypeErrors and provides informative logging.
  */
 if (typeof window !== 'undefined' && !window.api) {
-  console.warn('[Order Desk] window.api is not available. Running in browser fallback mode.');
+  console.warn('[Skulane] window.api is not available. Running in browser fallback mode.');
 
   const noopAsync = async () => null;
   const noopArray = async () => [];
@@ -128,7 +128,7 @@ if (typeof window !== 'undefined' && !window.api) {
       getAll: async () => ({}),
       get: async (_k, def) => def,
       set: noopAsync,
-      getAppInfo: async () => ({ version: '1.0.0', isPackaged: false })
+      getAppInfo: async () => ({ version: '1.0.2', isPackaged: false })
     },
     pack: {
       lookup: noopAsync,
@@ -152,7 +152,7 @@ if (typeof window !== 'undefined' && !window.api) {
         valid: true,
         tier: 'business',
         label: 'Business',
-        email: 'admin@orderdesk.local',
+        email: 'admin@skulane.local',
         maxStores: Infinity,
         maxHistoryDays: null,
         batchPrintLimit: Infinity,
@@ -164,7 +164,7 @@ if (typeof window !== 'undefined' && !window.api) {
         valid: true,
         tier: 'business',
         label: 'Business',
-        email: 'admin@orderdesk.local',
+        email: 'admin@skulane.local',
         maxStores: Infinity,
         maxHistoryDays: null,
         batchPrintLimit: Infinity,

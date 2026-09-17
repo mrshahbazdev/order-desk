@@ -53,10 +53,10 @@ export default function Settings() {
       ]);
 
       if (all) {
-        setStoreName(all.store_name || 'Order Desk');
+        setStoreName(all.store_name || 'Skulane');
         setStoreAddress(all.store_address || 'Lahore Commercial Hub, Pakistan');
         setStorePhone(all.store_phone || '+92 300 1234567');
-        setStoreEmail(all.store_email || 'support@orderdesk.local');
+        setStoreEmail(all.store_email || 'mrshahbaznns@gmail.com');
         setInvoicePrefix(all.invoice_prefix || 'INV-2026-');
       }
 
@@ -235,7 +235,7 @@ export default function Settings() {
                   <strong>Developer:</strong> Muhammad Shahbaz
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  <strong>Version:</strong> {appInfo.version || '1.0.7'} (Local-first)
+                  <strong>Version:</strong> {appInfo.version || '1.0.2'} (Local-first)
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   <strong>Storage:</strong> SQLite3 with WAL mode & SafeStorage DPAPI encryption

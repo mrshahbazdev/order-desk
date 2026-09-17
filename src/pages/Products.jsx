@@ -127,12 +127,12 @@ export default function Products() {
 
   // Presets
   const SAMPLE_PRESETS = [
-    { label: '👕 Polo Shirt', url: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=300' },
-    { label: '👟 Sneakers', url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300' },
-    { label: '🎧 Headphones', url: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300' },
-    { label: '⌚ Smartwatch', url: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300' },
-    { label: '🎒 Backpack', url: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300' },
-    { label: '⚡ Dock Station', url: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300' }
+    { label: 'Polo Shirt', url: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=300' },
+    { label: 'Sneakers', url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300' },
+    { label: 'Headphones', url: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300' },
+    { label: 'Smartwatch', url: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300' },
+    { label: 'Backpack', url: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300' },
+    { label: 'Dock Station', url: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300' }
   ];
 
   // Client Generator Helpers
@@ -388,7 +388,7 @@ export default function Products() {
         store_id: selectedStore === 'all' ? null : selectedStore
       });
       if (res && res.updatedCount > 0) {
-        setAlert({ type: 'success', message: `⚡ Successfully generated SKUs & Barcodes for ${res.updatedCount} variant(s)!` });
+        setAlert({ type: 'success', message: `Successfully generated SKUs & Barcodes for ${res.updatedCount} variant(s)!` });
       } else {
         setAlert({ type: 'info', message: 'All variants in the catalog already have valid SKUs & Barcodes!' });
       }
@@ -407,7 +407,7 @@ export default function Products() {
         product_id: product.id
       });
       if (res && res.updatedCount > 0) {
-        setAlert({ type: 'success', message: `⚡ Successfully generated SKUs & Barcodes for "${product.title}" (${res.updatedCount} variant(s))!` });
+        setAlert({ type: 'success', message: `Successfully generated SKUs & Barcodes for "${product.title}" (${res.updatedCount} variant(s))!` });
       } else {
         setAlert({ type: 'info', message: `"${product.title}" already has valid SKUs & Barcodes on all variants!` });
       }
@@ -427,7 +427,7 @@ export default function Products() {
         variantId: variant.id,
         data: { sku: newSku }
       });
-      setAlert({ type: 'success', message: `⚡ Generated SKU "${newSku}" for "${variant.title || product.title}"!` });
+      setAlert({ type: 'success', message: `Generated SKU "${newSku}" for "${variant.title || product.title}"!` });
       loadProducts();
     } catch (err) {
       setAlert({ type: 'error', message: 'Failed to generate SKU: ' + err.message });
@@ -442,7 +442,7 @@ export default function Products() {
         variantId: variant.id,
         data: { barcode: newBarcode }
       });
-      setAlert({ type: 'success', message: `⚡ Generated EAN-13 Barcode "${newBarcode}" for "${variant.title || product.title}"!` });
+      setAlert({ type: 'success', message: `Generated EAN-13 Barcode "${newBarcode}" for "${variant.title || product.title}"!` });
       loadProducts();
     } catch (err) {
       setAlert({ type: 'error', message: 'Failed to generate Barcode: ' + err.message });
@@ -530,7 +530,7 @@ export default function Products() {
             onClick={handleAutoGenerateAllMissing}
             sx={{ fontWeight: 800, borderColor: '#f59e0b', color: '#b45309', bgcolor: '#fffbeb', '&:hover': { bgcolor: '#fef3c7', borderColor: '#d97706' } }}
           >
-            ⚡ Auto-Generate Missing (SKU & Barcode)
+            Auto-Generate Missing (SKU & Barcode)
           </Button>
 
           <Button
@@ -648,10 +648,10 @@ export default function Products() {
                   label="Matching Store"
                   onChange={(e) => { setSelectedStore(e.target.value); setPage(0); }}
                 >
-                  <MenuItem value="all">🌐 All Stores ({stores.length})</MenuItem>
+                  <MenuItem value="all">All Stores ({stores.length})</MenuItem>
                   {stores.map(st => (
                     <MenuItem key={st.id} value={st.id}>
-                      {st.platform === 'shopify' ? '🟢 ' : '🟣 '}{st.label} ({st.platform})
+                      {st.label} ({st.platform})
                     </MenuItem>
                   ))}
                 </Select>
@@ -873,7 +873,7 @@ export default function Products() {
                         {/* Actions */}
                         <TableCell align="center">
                           <Stack direction="row" spacing={0.5} justifyContent="center">
-                            <Tooltip title="⚡ Auto-Generate missing SKU & Barcode for this product">
+                            <Tooltip title="Auto-Generate missing SKU & Barcode for this product">
                               <IconButton
                                 size="small"
                                 onClick={() => handleAutoGenerateSingleProduct(product)}
@@ -921,7 +921,7 @@ export default function Products() {
                             <Box sx={{ p: 2, my: 1, bgcolor: '#fff', borderRadius: 2, border: '1px solid #e2e8f0' }}>
                               <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1.5 }}>
                                 <Typography variant="subtitle2" sx={{ fontWeight: 800, color: '#0f172a' }}>
-                                  📦 All Variants for "{product.title}" ({product.variants?.length || 0})
+                                  All Variants for "{product.title}" ({product.variants?.length || 0})
                                 </Typography>
                                 <Stack direction="row" spacing={1}>
                                   <Button
@@ -932,7 +932,7 @@ export default function Products() {
                                     onClick={() => handleAutoGenerateSingleProduct(product)}
                                     sx={{ textTransform: 'none', fontWeight: 700, borderColor: '#f97316', color: '#ea580c' }}
                                   >
-                                    ⚡ Auto-Generate (SKU & Barcode)
+                                    Auto-Generate (SKU & Barcode)
                                   </Button>
                                   <Button
                                     size="small"
@@ -1010,7 +1010,7 @@ export default function Products() {
                                             </Typography>
                                             {v.image_url && (
                                               <Typography variant="caption" sx={{ color: '#2563eb', fontWeight: 700, fontSize: '0.68rem', display: 'block' }}>
-                                                🎨 Custom Option Image
+                                                Custom Option Image
                                               </Typography>
                                             )}
                                           </Box>
@@ -1182,7 +1182,7 @@ export default function Products() {
       {/* Adjust Stock Dialog */}
       <Dialog open={Boolean(editingVariant)} onClose={() => setEditingVariant(null)} maxWidth="sm" fullWidth>
         <DialogTitle sx={{ fontWeight: 800 }}>
-          📦 Adjust Inventory Stock
+          Adjust Inventory Stock
         </DialogTitle>
         <DialogContent dividers>
           {editingVariant && editingProduct && (
@@ -1260,11 +1260,11 @@ export default function Products() {
                   label="Reason for Adjustment"
                   onChange={(e) => setAdjustReason(e.target.value)}
                 >
-                  <MenuItem value="Inbound Restock / Shipment">📦 Inbound Restock / Supplier Shipment</MenuItem>
-                  <MenuItem value="Physical Cycle Count Audit">🔍 Physical Cycle Count / Audit</MenuItem>
-                  <MenuItem value="Damaged / QC Rejection">⚠️ Damaged / Quality Control Rejection</MenuItem>
-                  <MenuItem value="Customer Return Restock">↩️ Customer Return Restock</MenuItem>
-                  <MenuItem value="Manual Correction">✏️ Manual Desk Correction</MenuItem>
+                  <MenuItem value="Inbound Restock / Shipment">Inbound Restock / Supplier Shipment</MenuItem>
+                  <MenuItem value="Physical Cycle Count Audit">Physical Cycle Count / Audit</MenuItem>
+                  <MenuItem value="Damaged / QC Rejection">Damaged / Quality Control Rejection</MenuItem>
+                  <MenuItem value="Customer Return Restock">Customer Return Restock</MenuItem>
+                  <MenuItem value="Manual Correction">Manual Correction</MenuItem>
                 </Select>
               </FormControl>
 
@@ -1292,7 +1292,7 @@ export default function Products() {
       {/* Edit Variant Details Modal */}
       <Dialog open={editVariantModalOpen} onClose={() => setEditVariantModalOpen(false)} maxWidth="sm" fullWidth>
         <DialogTitle sx={{ fontWeight: 800 }}>
-          ✏️ Edit Variant Details (SKU, Barcode, Image & Price)
+          Edit Variant Details (SKU, Barcode, Image & Price)
         </DialogTitle>
         <DialogContent dividers>
           {editingVariantTarget && (
@@ -1446,7 +1446,7 @@ export default function Products() {
       {/* Add New Product Modal */}
       <Dialog open={createModalOpen} onClose={() => setCreateModalOpen(false)} maxWidth="md" fullWidth>
         <DialogTitle sx={{ fontWeight: 800 }}>
-          ➕ Add New Product & Initial Inventory
+          Add New Product & Initial Inventory
         </DialogTitle>
         <DialogContent dividers>
           <Stack spacing={2.5}>
@@ -1515,7 +1515,7 @@ export default function Products() {
               <Grid item xs={12}>
                 <Paper variant="outlined" sx={{ p: 2, bgcolor: '#f8fafc', borderRadius: 2 }}>
                   <Typography variant="caption" sx={{ fontWeight: 800, color: '#475569', mb: 1, display: 'block' }}>
-                    🖼️ MAIN PRODUCT IMAGE
+                    MAIN PRODUCT IMAGE
                   </Typography>
                   <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems="center">
                     {createImageUrl ? (
@@ -1574,7 +1574,7 @@ export default function Products() {
             <Divider />
             <Box>
               <Typography variant="subtitle2" sx={{ fontWeight: 800, mb: 1.5 }}>
-                🎨 Initial Variant Options, Images & Stock:
+                Initial Variant Options, Images & Stock:
               </Typography>
               {createVariants.map((v, idx) => (
                 <Paper key={idx} variant="outlined" sx={{ p: 1.5, mb: 1.5, bgcolor: '#ffffff', borderRadius: 2 }}>
@@ -1717,7 +1717,7 @@ export default function Products() {
 
       {/* Add Variant Modal */}
       <Dialog open={addVariantModalOpen} onClose={() => setAddVariantModalOpen(false)} maxWidth="sm" fullWidth>
-        <DialogTitle sx={{ fontWeight: 800 }}>➕ Add Variant to Product</DialogTitle>
+        <DialogTitle sx={{ fontWeight: 800 }}>Add Variant to Product</DialogTitle>
         <DialogContent dividers>
           <Stack spacing={2}>
             <Paper variant="outlined" sx={{ p: 1.5, bgcolor: '#f8fafc', borderRadius: 2 }}>
@@ -1858,7 +1858,7 @@ export default function Products() {
         fullWidth
       >
         <DialogTitle sx={{ fontWeight: 800 }}>
-          ✏️ Edit Variant Details (SKU, Barcode, Pricing & Stock)
+          Edit Variant Details (SKU, Barcode, Pricing & Stock)
         </DialogTitle>
         <DialogContent dividers>
           <Stack spacing={2.5}>

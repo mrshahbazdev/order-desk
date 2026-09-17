@@ -827,7 +827,7 @@ export default function PackStation() {
 
                 {(order.shipping_address?.address1 || order.ship_json?.address1) && (
                   <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.2 }}>
-                    📍 {order.shipping_address?.address1 || order.ship_json?.address1}
+                    {order.shipping_address?.address1 || order.ship_json?.address1}
                   </Typography>
                 )}
               </Box>
@@ -1478,7 +1478,7 @@ export default function PackStation() {
                   fontSize: '0.85rem'
                 }}
               >
-                <MenuItem value="all">🏬 All Stores</MenuItem>
+                <MenuItem value="all">All Stores</MenuItem>
                 {storesList.map((st) => (
                   <MenuItem key={st.id} value={st.id}>
                     {st.label}
@@ -1492,9 +1492,9 @@ export default function PackStation() {
           <Stack direction="row" spacing={1} sx={{ mt: 1.5, overflowX: 'auto', pb: 0.5 }}>
             {[
               { key: 'all', label: 'All Orders' },
-              { key: 'single', label: '⚡ Single-Item' },
-              { key: 'multi', label: '📦 Multi-Item' },
-              { key: 'partial', label: '⚠️ Partial' }
+              { key: 'single', label: 'Single-Item' },
+              { key: 'multi', label: 'Multi-Item' },
+              { key: 'partial', label: 'Partial' }
             ].map((tab) => {
               const isSelected = queueTypeFilter === tab.key;
               return (
@@ -1556,7 +1556,7 @@ export default function PackStation() {
                 <DoneAllIcon sx={{ fontSize: 32 }} />
               </Box>
               <Typography variant="h6" sx={{ fontWeight: 800, color: '#0f172a', mb: 0.5 }}>
-                All Caught Up! 🎉
+                All Caught Up!
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 360, mx: 'auto', mb: 3 }}>
                 {queueSearch || queueTypeFilter !== 'all' || queueStoreFilter !== 'all'
@@ -1646,7 +1646,7 @@ export default function PackStation() {
                           />
                           {isActive && (
                             <Chip
-                              label="🟢 ACTIVE IN STATION"
+                              label="ACTIVE IN STATION"
                               size="small"
                               sx={{
                                 height: 20,
@@ -1667,7 +1667,7 @@ export default function PackStation() {
                       {/* Customer & Location */}
                       <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 1.5 }}>
                         <Typography variant="body2" sx={{ fontWeight: 600, color: '#334155' }}>
-                          👤 {ord.customer_name}
+                          {ord.customer_name}
                         </Typography>
                         {ord.city && (
                           <Stack direction="row" spacing={0.3} alignItems="center">
@@ -1749,7 +1749,7 @@ export default function PackStation() {
                             />
                           ) : isPartial ? (
                             <Chip
-                              label="⚠️ Partial Order"
+                              label="Partial Order"
                               size="small"
                               sx={{ height: 22, fontSize: '0.7rem', fontWeight: 700, bgcolor: '#fef3c7', color: '#b45309' }}
                             />
@@ -1830,7 +1830,7 @@ export default function PackStation() {
       {/* Station Statistics & Mis-Scans Modal */}
       <Dialog open={statsOpen} onClose={() => setStatsOpen(false)} maxWidth="md" fullWidth>
         <DialogTitle sx={{ fontWeight: 800 }}>
-          📊 Pack Station Throughput & Quality Metrics
+          Pack Station Throughput & Quality Metrics
         </DialogTitle>
         <DialogContent dividers>
           {statsData && (
@@ -1911,7 +1911,7 @@ export default function PackStation() {
 
       {/* Pack Station Settings Modal */}
       <Dialog open={settingsOpen} onClose={() => setSettingsOpen(false)} maxWidth="sm" fullWidth>
-        <DialogTitle sx={{ fontWeight: 800 }}>⚙️ Pack Station Preferences</DialogTitle>
+        <DialogTitle sx={{ fontWeight: 800 }}>Pack Station Preferences</DialogTitle>
         <DialogContent dividers>
           <Stack spacing={2.5}>
             <Box>
@@ -1974,7 +1974,7 @@ export default function PackStation() {
 
       {/* Document HTML Preview Dialog */}
       <Dialog open={previewOpen} onClose={() => setPreviewOpen(false)} maxWidth="md" fullWidth>
-        <DialogTitle sx={{ fontWeight: 800 }}>📄 Document Live Preview</DialogTitle>
+        <DialogTitle sx={{ fontWeight: 800 }}>Document Live Preview</DialogTitle>
         <DialogContent dividers sx={{ bgcolor: '#525659', p: 3 }}>
           <Box
             sx={{
@@ -2017,7 +2017,7 @@ export default function PackStation() {
 
             <Box>
               <Typography variant="subtitle2" sx={{ fontWeight: 800, mb: 1 }}>
-                📦 Shipment Breakdown:
+                Shipment Breakdown:
               </Typography>
               <Table size="small" sx={{ border: '1px solid #e2e8f0', borderRadius: 1 }}>
                 <TableHead>

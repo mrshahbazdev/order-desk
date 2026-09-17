@@ -114,7 +114,7 @@ export default function DemoModeCard({ onDataChanged }) {
         </Stack>
 
         <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-          Populate realistic Shopify & WooCommerce orders, products with barcodes, wave picking batches, carrier shipments, COD reconciliations, and staff analytics to explore Order Desk without connecting real stores.
+          Populate realistic Shopify & WooCommerce orders, products with barcodes, wave picking batches, carrier shipments, COD reconciliations, and staff analytics to explore Skulane without connecting real stores.
         </Typography>
 
         {alert && (
